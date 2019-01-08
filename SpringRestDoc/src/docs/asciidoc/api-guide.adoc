@@ -1,0 +1,3 @@
+include::{snippets}/department-controller-test/get-all-departments/curl-request.adoc[]
+include::{snippets}/department-controller-test/get-all-departments/http-request.adoc[]
+include::{snippets}/department-controller-test/get-all-departments/http-response.adoc[]
