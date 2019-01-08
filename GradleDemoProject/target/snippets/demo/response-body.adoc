@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"Greetings":{"name":"AMIT","dept":"IT","age":26}}
+----
