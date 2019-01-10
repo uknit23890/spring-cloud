@@ -1,6 +1,7 @@
 
 package com.example.demo.controller;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,11 +28,8 @@ public class Controller {
 	 * @return list of update person data.
 	 */
 	@GetMapping("/")
-	public ResponseEntity<Map<String, Employee>> add() {
-		HashMap<String, Employee> response = new HashMap<String, Employee>();
-		Employee emp = new Employee("AMIT","IT",26);
-		response.put("Greetings", emp);
-		return new ResponseEntity<Map<String, Employee>>(response, HttpStatus.OK);
+	public Map<String, Object> add() {
+		 return Collections.singletonMap("message", "Hello World");
 	}
 
 }

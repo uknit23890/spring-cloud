@@ -1,15 +1,9 @@
-= Sample API Documentation
+= Getting Started With Spring REST Docs
 
-== Introduction
-This is an example of Spring REST Docs generated documentation.
+This is an example output for a service running at http://localhost:8080:
 
-== Persons API
-Collection of CRUD API endpoints used to manipulate persons registered in the application.
-
-=== Get Person By Id
-Obtains a specific person registered in the application by its unique identifier.
-
-
-include::{snippets}/demo/curl-request.adoc[]
 include::{snippets}/demo/http-request.adoc[]
+
 include::{snippets}/demo/http-response.adoc[]
+
+As you can see the format is very simple, and in fact you always get the same message.

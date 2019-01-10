@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -26,7 +28,8 @@ import org.springframework.web.context.WebApplicationContext;
 @SpringBootTest
 @ExtendWith({ RestDocumentationExtension.class, SpringExtension.class })
 @AutoConfigureMockMvc
-@AutoConfigureRestDocs(outputDir = "target/snippets")
+@AutoConfigureRestDocs(outputDir = "build/generated-snippets")
+
 public class TestController {
 	
 	@Autowired
@@ -47,7 +50,9 @@ public class TestController {
 		this.mockMvc
 		.perform(RestDocumentationRequestBuilders.get("/"))
         .andExpect(status().isOk())
-        .andExpect(content().contentType("application/json;charset=UTF-8")).andDo(document("demo"));
+        .andExpect(content().contentType("application/json;charset=UTF-8")).andDo(document("demo",
+        		responseFields(fieldWithPath("message").description("The welcome message for the user.")
+        	    )));
         
 	}
 	
